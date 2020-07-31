@@ -13,7 +13,11 @@ function debounce(func, wait = 20, immediate = true) {
     };
 };
 const sliderImages = document.querySelectorAll(".slide-in");
+
 function checkSlide(e) {
-    console.count(e);
+    sliderImages.forEach(slideImage => {
+        const slideInAt = (window.scrollY + window.innerHeight) - slideImage.height / 2;
+        const imageBottom = sliderImage.offsetTop + sliderImage.height;
+    })
 }
 window.addEventListener("scroll", debounce(checkSlide));
